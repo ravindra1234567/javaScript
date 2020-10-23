@@ -40,6 +40,7 @@ console.log(car1['engine1']); // access using bracket [] notation
 console.log(car1)
 
 3) Creating object with Object.create() method:-
+
 The Object.create() method creates a new object, using an existing object as the prototype of the newly created object.
 // Create object using Object.create method
 const info = {
@@ -56,6 +57,7 @@ console.log("Create object using Object.create method");
 obj.printinfo();
 
 4) Using es6 classes:-
+
 ES6 supports class concept like any other Statically typed or object oriented language. So, object can be created out of a class in javascript as well as shown below :-
 // Create object using es6 classes
 class Employee{
@@ -70,3 +72,63 @@ console.log("Create object using es6 classes");
 console.log(obj1.name);
 console.log(obj1);
 
+Q2. How can you create an array in javaScript ?
+
+In JavaScript, array is a single variable that is used to store different elements. It is often used when we want to store list of elements and access them by a single variable. Unlike most languages where array is a reference to the multiple variable, in JavaScript array is a single variable that stores multiple elements.
+Declaration of an Array
+There are basically two ways to declare an array.
+Var array = [] 
+var array = new array();
+<script>
+// create array without new kayword
+function arr(){
+var array = ["Ravindra","Sumit","Sonu"];
+console.log(array);
+}
+// Create array with new keyboard
+function arr1(){
+var city = new Array(1,2,3,4,5);
+console.log(city);
+}
+</script>
+
+
+
+
+
+
+
+Q3 How to create cookie using javaScript ?
+ A cookie is an amount of information that persists between a server-side and a client-side. A web browser stores this information at the time of browsing.
+A cookie contains the information as a string generally in the form of a name-value pair separated by semi-colons. It maintains the state of a user and remembers the user's information among all the web pages.
+How Cookies Works?
+      When a user sends a request to the server, then each of that request is treated as a new request sent by the different user.
+      So, to recognize the old user, we need to add the cookie with the response from the server.
+      browser at the client-side.
+      Now, whenever a user sends a request to the server, the cookie is added with that request automatically. Due to the cookie, the server recognizes the users.
+<!DOCTYPE html> 
+<html>
+<head> 
+<script type = "text/javascript">
+function WriteCookie() {
+if( document.myform.customer.value == "" ) {
+alert("Enter some value!");
+return;
+}
+cookievalue = escape(document.myform.customer.value) + ";";
+document.cookie = "name=" + cookievalue;
+document.write ("Setting Cookies : " + "name=" + cookievalue );
+}
+</script> 
+</head>
+<body> 
+<form name = "myform" action = "">
+Enter name: <input type = "text" name = "customer"/>
+<input type = "button" value = "Set Cookie" onclick = "WriteCookie();"/>
+</form> 
+</body>
+</html>
+
+
+
+ 
