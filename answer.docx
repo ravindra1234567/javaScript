@@ -99,6 +99,7 @@ console.log(city);
 
 
 Q3 How to create cookie using javaScript ?
+
  A cookie is an amount of information that persists between a server-side and a client-side. A web browser stores this information at the time of browsing.
 A cookie contains the information as a string generally in the form of a name-value pair separated by semi-colons. It maintains the state of a user and remembers the user's information among all the web pages.
 How Cookies Works?
@@ -106,6 +107,7 @@ How Cookies Works?
       So, to recognize the old user, we need to add the cookie with the response from the server.
       browser at the client-side.
       Now, whenever a user sends a request to the server, the cookie is added with that request automatically. Due to the cookie, the server recognizes the users.
+
 <!DOCTYPE html> 
 <html>
 <head> 
@@ -129,6 +131,244 @@ Enter name: <input type = "text" name = "customer"/>
 </body>
 </html>
 
+Q5. What is difference between local and session storage with example?
+
+LocalStorage:
+
+Web storage can be viewed simplistically as an improvement on cookies, providing much greater storage capacity. Available size is 5MB which considerably more space to work with than a typical 4KB cookie.
+The data is not sent back to the server for every HTTP request (HTML, images, JavaScript, CSS, etc) - reducing the amount of traffic between client and server.
+The data stored in localStorage persists until explicitly deleted. Changes made are saved and available for all current and future visits to the site.
+​
+sessionStorage:
+
+It is similar to localStorage.
+Changes are only available per window (or tab in browsers like Chrome and Firefox). Changes made are saved and available for the current page, as well as future visits to the site on the same window. Once the window is closed, the storage is deleted
+The data is available only inside the window/tab in which it was set.
+
+The sessionStorage object is equal to the localStorage object, except that it stores the data for only one session. The data is deleted when the user closes the browser window.
+ex-
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+if(typeof(Storage) !== "undefined") {
+if (sessionStorage.clickcount) {
+sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+} else {
+ sessionStorage.clickcount = 1;
+}document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+} else {
+document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+ }
+}
+</script>
+</head>
+<body>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+<p>Click the button to see the counter increase.</p>
+<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+</body>
+</html>
+
+With local storage, web applications can store data locally within the user's browser.
+Before HTML5, application data had to be stored in cookies, included in every server request. Local storage is more secure, and large amounts of data can be stored locally, without affecting website performance.
+Unlike cookies, the storage limit is far larger (at least 5MB) and information is never transferred to the server.
+Local storage is per domain. All pages, from one domain, can store and access the same data.
+
+Q6. What will be the output of the code below?
+
+var Y = 1;
+if (function F(){})
+{
+y += Typeof F;</span>
+}
+console.log(y);
+
+Ans. Undefilne
+
+Q7. what is difference between call and apply with example ?
+
+call() Method:
+
+It calls the method, taking the owner object as argument. The keyword this refers to the ‘owner’ of the function or the object it belongs to. We can call a method which can be used on different objects.
+
+Syntex :-
+object.objectMethod.call( objectInstance, arguments )
+
+Parameters:It accepts two parameters as mentioned above and described below:
+    • objectInstance:It holds the instance of an object.
+    • arguments:The call() method takes the comma separated arguments.
+
+
+apply() Method:
+The apply() method is used to write methods, which can be used on different objects. It is different from the function call() because it takes arguments as an array.
+Syntax:
+object.objectMethod.apply(objectInstance, arrayOfArguments)
+
+Parameters:
+
+It accepts two parameters as mentioned above and described below:
+
+objectInstance: It holds the instance of an object.
+      ArrayOfArguments: The apply() method takes the array of arguments.
+Difference between call() and apply() method: The only difference is call() method takes the arguments separated by comma while apply() method takes the array of arguments.
+
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>call() method</title> 
+	</head> 
+	
+	<body style = "text-align:center;"> 
+		<h1 style = "color:green;" > 
+			GeeksForGeeks 
+		</h1> 
+
+		<button onClick="fun()"> 
+			click 
+		</button> 
+		
+		<p id="GFG"></p> 
+		
+		<!-- Script to use call() method to call 
+			function -->
+		<script> 
+			function fun() { 
+			let p = { 
+				fullName: function(addr1, addr2) { 
+				return this.fName + " " + this.lName 
+						+ ", " + addr1 + ", " + addr2; 
+				} 
+			} 
+			let p1 = { 
+				fName:"GFGfName", 
+				lName: "GFGlName", 
+			} 
+			let x = p.fullName.call(p1, "India", "USA"); 
+			document.getElementById("GFG").innerHTML = x; 
+			} 
+		</script> 
+	</body> 
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q8. How to empty an Array in JavaScript?
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+<title> 
+JavaScript to set array empty 
+</title> 
+</head> 
+<body style = "text-align:center;"> 
+<h1 style = "color:green;" > 
+Edunomics
+</h1> 
+<div id = "up"></div> <br/><br/>
+<button onclick="empty()">Click to Empty </button><br/><br/> 
+<div id = "down" style="color: green"></div> 
+<!-- Script to set size of array to zero -->
+<script> 
+// Array Create and initialise 
+var array = [1, 2, 3, 4, 5,7,8,9,10]; 
+var up = document.getElementById("up").innerHTML = array; 
+var down = document.getElementById("down").innerHTML = "length of Array = "+ array.length; 
+
+// Empty array
+function empty() { 
+array = []; 
+down = document.getElementById("down"); 
+down.innerHTML = "length of Array = " 
++ array.length; 
+} 
+</script> 
+</body> 
+
+</html> 
+
+
+Q9.  What will be the output of the following code?
+var X = { Foo : 1}; 
+var Output = (function() 
+{ 
+delete X.foo; 
+return X.foo; 
+} 
+)(); 
+console.log(output);
+
+Ans : cookie.html:24 Uncaught ReferenceError: output is not defined.
+
+Q10.  What will be the output of the following code?
+var X = { Foo : 1}; 
+var Output = (function() 
+{ 
+delete X.foo; 
+return X.foo; 
+} 
+)(); 
+console.log(output);
+
+ans:  Uncaught ReferenceError: output is not defined
+
+Q11. What will be the output of the following code?
+var Employee =
+{
+company: 'xyz'
+}
+var Emp1 = Object.create(employee);
+delete Emp1.company Console.log(emp1.company);
+
+Ans : Uncaught ReferenceError: employee is not defined
+
+
+
+
+
+
+Q12: Name the types of function with reason?
+
+function display() 
+{ 
+document.writeln("Named Function"); 
+} 
+display(); 
+
+Ans : The function which has named at the time of definition is called a named function.
+
+Q13. Name the types of function with reason?
+
+var display=function() 
+{ 
+document.writeln("Anonymous Function"); 
+} 
+display(); 
+
+Ans :  This is the anonymous javascript function. 
+It is a function that has no name. These functions are declared dynamically at runtime using the function operator instead of the function declaration. The function operator is more flexible than a function declaration. It can be easily used in the place of an expression.
+
+Q14. If we want to return the character from a specific index which method is used, explain with example?
 
 
  

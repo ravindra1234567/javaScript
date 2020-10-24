@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		JavaScript to set array empty 
+	</title> 
+</head> 
+		
+<body style = "text-align:center;"> 
+	
+	<h1 style = "color:green;" > 
+		Edunomics
+	</h1> 
+			
+	<div id = "up"></div> <br/><br/>
+	
+	<button onclick="empty()">Click to Empty </button><br/><br/> 
+	
+	<div id = "down" style="color: green"></div> 
+	
+	<!-- Script to set size of array to zero -->
+	<script> 
+        // Array Create and initialise 
+		var array = [1, 2, 3, 4, 5,7,8,9,10]; 
+		var up = document.getElementById("up").innerHTML = array; 
+		var down = document.getElementById("down").innerHTML = "length of Array = "+ array.length; 
+
+        // Empty array
+		function empty() { 
+			array = []; 
+			down = document.getElementById("down"); 
+			down.innerHTML = "length of Array = " 
+					+ array.length; 
+		} 
+	</script> 
+</body> 
+
+</html>  
