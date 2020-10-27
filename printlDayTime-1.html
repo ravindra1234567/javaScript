@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Print Day and Time </title>
+        <script>
+            function dtime(){
+                const date = new Date();
+                const daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+                let d = date.getDay();
+                let day = daylist[d];
+                let hours = date.getHours();
+                let prepand = (hours >=12)?"PM" : "AM";
+                hours = (hours >= 12) ? hours-12 : hours;
+                let minutes = date.getMinutes();
+                let seconds = date.getSeconds();
+                
+                document.getElementById("day").innerHTML="Today is :"+day;
+                document.getElementById("time").innerHTML = "Current time is : "+hours+" "+ prepand+":"+minutes+":"+ seconds;
+
+                console.log("day =", day);
+                console.log("Hours =" , hours);
+                console.log("Minutes = ",minutes);
+                console.log("Seconds = ",seconds);
+                console.log("Prepand = " + prepand);
+            }
+
+        </script>
+    </head> 
+    <body onload="dtime()">
+        <div style="border: 2px solid;text-align: center;">
+            <h1>Day and  Time</h1>
+            <h2 id = "day"></h2>
+            <h2 id="time"></h2>
+        </div>
+    </body>   
+</html>
