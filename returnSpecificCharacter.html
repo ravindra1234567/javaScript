@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>String "HELLO WORLD".</p>
+
+<button onclick="fun()">Click</button>
+
+<p id="demo"></p>
+
+<script>
+function fun() {
+  var str = "HELLO WORLD";
+  const i = prompt("Enter index");
+  if(i>= str.length){
+      alert("Index out of bound");
+  }else{
+    var res = str.charAt(i);
+    //   document.getElementById("demo").innerHTML = res;
+    alert(res);
+   }
+}
+</script>
+
+</body>
+</html>
