@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Calculate Christmas Days </title>
+</head>
+<script>
+    function christmas() {
+        document.getElementById("day").innerHTML = "Left Days = ";
+
+        const today = new Date();
+        let cmas = new Date(today.getFullYear(), 11, 25);
+        console.log(today);
+        console.log(cmas);
+        if (today.getMonth() == 11 && today.getDate() > 25) {
+            cmas.setFullYear(cmas.getFullYear() + 1);
+        }
+        console.log(cmas.getTime());
+        console.log(today.getTime());
+
+        var one_day = 1000 * 60 * 60 * 24;
+        let days = Math.ceil((cmas.getTime() - today.getTime()) / (one_day));
+        document.getElementById("day").innerHTML= "    "+days+"   - Days left until Christmas ";
+    }
+</script>
+
+<body onload="christmas();">
+    <h2 id="day"></h2>
+</body>
+
+</html>
