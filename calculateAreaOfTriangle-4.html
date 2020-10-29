@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Area of Triangle</title>
+    <script>
+        function area() {
+            let a = 5,
+                b = 6,
+                c = 7;
+            let s;
+            s = (a + b + c) / 2;
+            let are = Math.sqrt(s * ((s - a) * (s - b) * (s - c)));
+
+            document.getElementById("a").innerHTML = "Area = " + are;
+            console.log(are);
+        }
+    </script>
+</head>
+
+<body onload="area()" >
+    <div style="text-align: center;border: 2px solid;margin-left: 20pc;margin-right: 20pc;">
+        <h2>Calculate Area of Triangle </h2>
+        <p>a = 5</p>
+        <p>b = 6</p>
+        <p>c = 7</p>
+        <h2 id="a"> fjkf </h2>
+    </div>
+</body>
+
+</html>
