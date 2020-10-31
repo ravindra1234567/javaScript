@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title></title>
+    <script>
+        function findJanuary() {
+            let s=" ";
+            for (let year = 2014; year <= 2050; year++) {
+                let date = new Date(year, 0, 1)
+                if (date.getDay() == 0) {
+                    console.log("1st January is being a Sunday  " + date.getDate()+" - "+" 1 - "+year); 
+                }
+            }
+            console.log(s);
+        }
+    </script>
+</head>
+
+<body onload="findJanuary();">
+    <div style="text-align: center;">
+        <h2>Please go to console </h2>
+        <p id="first"></p>
+    </div>
+</body>
+
+</html>
